@@ -225,12 +225,12 @@
 // tess
 var typed = new Typed("#typed-text", {
   strings: ["Deliver the Greatness of Seafood Quality"],
-  typeSpeed: 150, // kecepatan ketik
-  backSpeed: 40, // kecepatan hapus
-  backDelay: 1500, // jeda sebelum mulai menghapus
-  startDelay: 500, // jeda sebelum mulai mengetik
-  loop: true, // supaya terus mengulang
+  typeSpeed: 150,
   showCursor: true,
   cursorChar: "|",
-  smartBackspace: false, // hapus semua, bukan hanya perbedaan karakter
+  startDelay: 500,
+  onComplete: function (self) {
+    // Sembunyikan kursor setelah selesai mengetik
+    document.querySelector(".typed-cursor").style.display = "none";
+  },
 });
